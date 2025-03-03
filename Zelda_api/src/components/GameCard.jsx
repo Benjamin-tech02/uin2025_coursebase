@@ -1,3 +1,4 @@
+
 export default function GameCard({ game }) {
   return (
     <article>

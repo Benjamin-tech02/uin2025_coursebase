@@ -2,8 +2,7 @@
 import { useEffect, useState } from "react";
 
 // Importerer bilder og CSS
-import reactLogo from "./assets/react.svg"; // React-logoen
-import viteLogo from "/vite.svg"; // Vite-logoen (byggeverktøy)
+
 import "./App.css"; // Importerer stilene (CSS)
 
 // Importerer andre komponenter som brukes i appen
