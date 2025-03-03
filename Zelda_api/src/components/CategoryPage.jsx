@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import {useParams} from "react-router-dom";
+
+import { useParams } from "react-router-dom";
+import CategoryCard from "./CategoryCard";
+
 export default function CategoryPage() {
   const { slug } = useParams();
   const [result, setResult] = useState();
@@ -11,6 +15,14 @@ export default function CategoryPage() {
     .catch((error) => 
       console.error("Det skjedde en feil under fetch", error)
     );
+
+  const getData = async () => {
+    fetch(`https://zelda.fanapis.com/api/${slug}`)
+      .then((response) => response.json())
+      .then((data) => setResult(data.data))
+      .catch((error) =>
+        console.error("Det skjedde en feil under fetch", error)
+      );
   };
 
   useEffect(() => {
@@ -25,6 +37,12 @@ export default function CategoryPage() {
           <CategoryPage item={item} key={item.id} />
         ))}
       </search>
+
+      <section className="flex-section">
+        {result?.map((item) => (
+          <CategoryCard item={item} key={item.id} />
+        ))}
+      </section>
     </>
   );
 }
