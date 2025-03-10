@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 
 // Importerer bilder og CSS
-
 import "./App.css"; // Importerer stilene (CSS)
 
 // Importerer andre komponenter som brukes i appen
